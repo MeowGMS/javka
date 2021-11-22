@@ -15,17 +15,17 @@ public class TestLab24 {
         Scanner sc = new Scanner(System.in);
 
         while (true) {
-            System.out.println("a - добавить запись\nr - запись заново\nc - закрыть программу\n");
+            System.out.println("a - добавить\nr - перезаписать\nc - закрыть\n");
 
             String decision = sc.nextLine();
 
             boolean appendText;
 
-            if (decision.equals("a")){
+            if (decision.equals("a")) {
                 appendText = true;
-            } else if (decision.equals("r")){
+            } else if (decision.equals("r")) {
                 appendText = false;
-            } else if (decision.equals("c")){
+            } else if (decision.equals("c")) {
                 break;
             } else {
                 continue;

@@ -59,8 +59,6 @@ public class TestPrac7 {
             System.out.println("second " + rounds);
         } else if (secondPool.isEmpty()){
             System.out.println("first " + rounds);
-        } else {
-            System.out.println("botva");
         }
     }
 
@@ -87,5 +85,4 @@ public class TestPrac7 {
         secondPool.pollFirst();
         secondPool.offerLast(second);
     }
-
 }
