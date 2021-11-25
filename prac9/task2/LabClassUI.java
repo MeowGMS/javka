@@ -2,12 +2,9 @@ package mirea.prac9.task2;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.List;
 
 public class LabClassUI extends JFrame {
-
     private List<Student> students;
     private JLabel studentLabel;
 
@@ -58,7 +55,6 @@ public class LabClassUI extends JFrame {
         studentLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);
         studentLabel.setFont(defaultFont());
 
-
         container.add(label);
         container.add(textField);
         container.add(findStudentButton);
@@ -77,7 +73,6 @@ public class LabClassUI extends JFrame {
     }
 
     private void findStudent(String name) throws EmptyStringException {
-
         if (name.isEmpty()){
             throw new EmptyStringException(name + " не найден");
         }

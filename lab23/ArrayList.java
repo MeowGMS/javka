@@ -279,13 +279,13 @@ public class ArrayList<T> implements List<T> {
             throw new IndexOutOfBoundsException("toIndex = " + toIndex);
         }
 
-        ArrayList<T> coolArrayList = new ArrayList<>(toIndex - fromIndex);
+        ArrayList<T> newArrayList = new ArrayList<>(toIndex - fromIndex);
 
         for (int i = fromIndex; i < toIndex; i++){
-            coolArrayList.add((T) data[i]);
+            newArrayList.add((T) data[i]);
         }
 
-        return coolArrayList;
+        return newArrayList;
     }
 
     private void resize(int newSize){

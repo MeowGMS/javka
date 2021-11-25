@@ -3,8 +3,6 @@ package mirea.lab22;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Random;
 
 public class GuessNumGUI extends JFrame {
@@ -21,44 +19,40 @@ public class GuessNumGUI extends JFrame {
     int numberToGuess = random.nextInt(20);
 
     public GuessNumGUI() {
-        super("Guess Number Game");
+        super("Game");
 
-        this.setBounds(400, 100, 600, 600);
+        this.setBounds(960, 540, 300, 200);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Container mainContainer = this.getContentPane();
 
         mainContainer.setLayout(new BoxLayout(mainContainer, BoxLayout.PAGE_AXIS));
 
-        JLabel ruleMessage = new JLabel("Input number in range from 0 to 20");
+        JLabel ruleMessage = new JLabel("Number from 0 to 30");
 
-        ruleMessage.setFont(new Font("Sans Serif", Font.PLAIN, 30));
+        ruleMessage.setFont(new Font("Sans Serif", Font.BOLD, 20));
         ruleMessage.setAlignmentX(JLabel.CENTER_ALIGNMENT);
 
         JTextField numberTextArea = new JTextField();
 
-        numberTextArea.setMaximumSize(new Dimension(200,numberTextArea.getPreferredSize().height));
+        numberTextArea.setMaximumSize(new Dimension(200, numberTextArea.getPreferredSize().height));
 
-        JButton guessButton = new JButton("Guess");
+        JButton guessButton = new JButton("Enter");
 
         guessButton.setAlignmentX(JButton.CENTER_ALIGNMENT);
         guessButton.setFont(new Font("Sans Serif", Font.PLAIN, 20));
-        guessButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    int number = Integer.parseInt(numberTextArea.getText());
-                    if (number >= 0 && number <= 20) {
-                        updateGame(number);
-                    }
-                    else{
-                        showMessage("Input correct number!");
-                    }
+        guessButton.addActionListener(e -> {
+            try {
+                int number = Integer.parseInt(numberTextArea.getText());
 
+                if (number >= 0 && number <= 20) {
+                    updateGame(number);
+                } else{
+                    showMessage("Incorrect");
                 }
-                catch (Exception exception){
-                    showMessage("Input correct number!");
-                }
+
+            } catch (Exception exception){
+                showMessage("Input correct number!");
             }
         });
 
@@ -103,7 +97,6 @@ public class GuessNumGUI extends JFrame {
             showMessage("You lose! The number is " + numberToGuess);
             clearGame();
         }
-
     }
 
     private void clearGame(){

@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Student implements Comparable<mirea.prac6.Student>, Serializable {
     public int id;
+
     private double averageBall;
     private String name;
 
