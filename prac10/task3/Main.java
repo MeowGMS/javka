@@ -1,10 +1,10 @@
-package mirea.final_lab;
+package mirea.prac10.task3;
 
-import mirea.final_lab.ui.ApplicationUI;
+import mirea.prac10.task3.ui.ApplicationUI;
 
 import java.awt.*;
 
-public class TestPrac1516 {
+public class Main {
   public static void main(String[] args) {
     ApplicationUI application = new ApplicationUI();
 
@@ -12,7 +12,5 @@ public class TestPrac1516 {
     application.pack();
     application.setLocationRelativeTo(null);
     application.setVisible(true);
-
-
   }
 }

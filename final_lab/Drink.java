@@ -1,46 +1,32 @@
 package mirea.final_lab;
 
-public final class Drink implements Item {
-  private static final double DEFAULT_PRICE = 0;
+public final class Drink extends MenuItem implements Alcoholable {
+  private final double alcoholVol;
+  private final DrinkTypeEnum type;
 
-  private double cost;
+  Drink(String name, String description, double alcoholVol, DrinkTypeEnum type) {
+    super(name, description);
 
-  private String name;
-  private String description;
-
-  Drink(String name, String description) {
-    this.cost = DEFAULT_PRICE;
-    this.name = name;
-    this.description = description;
+    this.alcoholVol = alcoholVol;
+    this.type = type;
   }
 
-  Drink(double price, String name, String description) {
-    this.cost = price;
-    this.name = name;
-    this.description = description;
+  Drink(double price, String name, String description, double alcoholVol, DrinkTypeEnum type) {
+    super(price, name, description);
+
+    this.alcoholVol = alcoholVol;
+    this.type = type;
   }
 
-  public double getCost() {
-    return this.cost;
+  public DrinkTypeEnum getType() {
+    return this.type;
   }
 
-  public void setCost(double cost) {
-    this.cost = cost;
+  public boolean isAlcoholDrink() {
+    return this.alcoholVol > 0;
   }
 
-  public String getDescription() {
-    return this.description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public String getName() {
-    return this.name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
+  public double getAlcoholVol() {
+    return this.alcoholVol;
   }
 }

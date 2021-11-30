@@ -13,11 +13,10 @@ public class Sorting {
       int i = left - 1;
       for (; i >= 0; i--){
         if (value.compareTo(list.get(i)) < 0){
-          list.set(i+1, list.get(i));
-        }
-        else break;
+          list.set(i + 1, list.get(i));
+        } else break;
       }
-      list.set(i+1, value);
+      list.set(i + 1, value);
     }
   }
 
@@ -65,7 +64,7 @@ public class Sorting {
     if (src.size() % 2 == 0) {
       rightCapacity = midpoint;
     } else {
-      rightCapacity = midpoint+1;
+      rightCapacity = midpoint + 1;
     }
 
     right = new ArrayList<>(rightCapacity);
@@ -95,8 +94,7 @@ public class Sorting {
         if (left.get(leftPointer).compareTo(right.get(rightPointer)) < 0){
           result.add(left.get(leftPointer));
           leftPointer++;
-        }
-        else {
+        } else {
           result.add(right.get(rightPointer));
           rightPointer++;
         }
